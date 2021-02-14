@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>✖️Multiplicados✖️</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="tablax">
+      <h1 style="display: inline">Tablas de multiplicar :</h1>
+      <h2 style="display: inline">Tabla del {{numero}}</h2>
+      <p>
+        Debés completar el resultado de cada operación y comprobar el resultado.
+        Una vez finalizado ya podés avanzar a la siguiente tabla!
+      </p>
+      <ul id="listaTablas">
+        <li v-for="factor of factores">
+          <div id="unItem">
+            <label>{{numero}} x {{factor}} =</label>
+            <input
+              id="inputResultado"
+              type="number"
+              v-model="producto"
+            /><button v-on:click="comprobar(factor)">Comprobar</button>
+          </div>
+        </li>
+
+        <button v-on:click="anterior">Anterior</button
+        ><button v-on:click="siguiente">Siguiente</button>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="tablas.js"></script>
+  </body>
+</html>
